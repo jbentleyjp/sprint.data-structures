@@ -11,12 +11,80 @@ class LinkedList {
     }
   }
 
-  appendToTail(value) {}
+  appendToTail(value) {
+    const output = new Node(value);
+    if (!this.head) {
+      this.head = output;
+      this.tail = output;
+      return this.tail;
+    } else {
+      this.tail.next = output;
+      this.tail = output;
+      return this.tail;
+    }
 
-  removeHead() {}
+    // this.head.next = output
+    // this.tail = output
+    // return this.tail
 
-  findNode(value) {}
+    // this.head.next = output
+    // this.tail = output
+    // this.head.next = this.tail
+    // H  .  .  T  .
+    // 1->2->3->4->5
 
+    // this.tail = this.head
+    // while (this.tail.next !== null){
+    //   this.tail = this.tail.next
+    // }
+    // this.tail.next = output;
+    // return this.tail.next
+    // let currentNode = this.head
+    // while (currentNode.next !== null) {
+    //   console.log(currentNode.next)
+    //   currentNode = currentNode.next
+    // }
+    // currentNode.next = output
+  }
+
+  removeHead() {
+    const removedHead = this.head;
+    this.head = this.head.next;
+    return removedHead;
+  }
+
+  //H  .  T
+  //5->3->7
+
+  /* 
+  {
+    Value:5,
+    next:{
+      value:3,
+      next:{
+        value:7,
+        next:{
+          value:9,
+          next:null
+        }
+      }
+    }
+  }
+  
+  */
+
+  findNode(value) {
+    let currentNode = this.head;
+
+    while (currentNode.value !== value) {
+      currentNode = currentNode.next;
+      if (currentNode === null) {
+        return currentNode;
+      }
+    }
+    return currentNode;
+  }
+  //check if we hit on the first and last node
   /*
 +-------------------------+
 | Advanced Requirements!! |

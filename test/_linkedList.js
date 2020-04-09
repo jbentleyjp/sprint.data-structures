@@ -5,7 +5,7 @@ const { isClass } = require("./utilities");
 const LinkedList = require("../src/LinkedList");
 
 let linkedList;
-describe("Linked Lists", () => {
+describe.only("Linked Lists", () => {
   beforeEach(() => {
     linkedList = new LinkedList(5);
   });
@@ -59,7 +59,7 @@ describe("Linked Lists", () => {
 
     it("should be okay to appendToTail when there is no initial value", () => {
       linkedList = new LinkedList();
-
+      //console.log(linkedList)
       const newNode = linkedList.appendToTail(5);
       expect(linkedList.head).to.deep.equal(newNode);
       expect(linkedList.tail).to.deep.equal(newNode);
