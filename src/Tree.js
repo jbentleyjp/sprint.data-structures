@@ -27,6 +27,25 @@ class Tree {
     return exists;
   }
 
+  remove(value) {
+    //write some tests if you can!
+    let removedVal;
+
+    const innerFunc = (branch) => {
+      if (branch.value === value) {
+        removedVal = branch;
+        // delete branch
+        branch = null;
+      } else {
+        for (const item of branch.children) {
+          innerFunc(item);
+        }
+      }
+    };
+    innerFunc(this);
+    return removedVal;
+  }
+
   /*
 +-------------------------+
 | Advanced Requirements!! |
