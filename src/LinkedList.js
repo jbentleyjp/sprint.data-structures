@@ -22,29 +22,6 @@ class LinkedList {
       this.tail = output;
       return this.tail;
     }
-
-    // this.head.next = output
-    // this.tail = output
-    // return this.tail
-
-    // this.head.next = output
-    // this.tail = output
-    // this.head.next = this.tail
-    // H  .  .  T  .
-    // 1->2->3->4->5
-
-    // this.tail = this.head
-    // while (this.tail.next !== null){
-    //   this.tail = this.tail.next
-    // }
-    // this.tail.next = output;
-    // return this.tail.next
-    // let currentNode = this.head
-    // while (currentNode.next !== null) {
-    //   console.log(currentNode.next)
-    //   currentNode = currentNode.next
-    // }
-    // currentNode.next = output
   }
 
   removeHead() {
@@ -52,26 +29,6 @@ class LinkedList {
     this.head = this.head.next;
     return removedHead;
   }
-
-  //H  .  T
-  //5->3->7
-
-  /* 
-  {
-    Value:5,
-    next:{
-      value:3,
-      next:{
-        value:7,
-        next:{
-          value:9,
-          next:null
-        }
-      }
-    }
-  }
-  
-  */
 
   findNode(value) {
     let currentNode = this.head;
@@ -84,7 +41,7 @@ class LinkedList {
     }
     return currentNode;
   }
-  //check if we hit on the first and last node
+
   /*
 +-------------------------+
 | Advanced Requirements!! |
@@ -95,15 +52,15 @@ Do not proceed until you are done with the basic
 requirements for ALL data structures in this exercise.
 */
 
-  forEach(callback) {}
+  // forEach(callback) {}
 
-  print() {}
+  // print() {}
 
-  insertHead(value) {}
+  // insertHead(value) {}
 
-  insertAfter(refNode, value) {}
+  // insertAfter(refNode, value) {}
 
-  removeAfter(refNode) {}
+  // removeAfter(refNode) {}
 }
 
 module.exports = LinkedList;
