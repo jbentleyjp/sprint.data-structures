@@ -13,10 +13,7 @@ class Graph {
   }
 
   removeNode(node) {
-    // console.log(this, this.nodes)
-    console.log(node, this.nodes);
     for (const el in this.nodes) {
-      console.log(node, el, this.nodes);
       this.removeEdge(node, el);
     }
     delete this.nodes[node];
@@ -38,22 +35,19 @@ class Graph {
   }
 
   removeEdge(node1, node2) {
-    const index1 = this.nodes[node1].indexOf(node2);
-    const index2 = this.nodes[node2].indexOf(node1);
-
-    this.nodes[node1].splice(index1, 1);
-    this.nodes[node2].splice(index2, 1);
-    //cons t indeindex1 = this.nodes[node].indexOf(node2)
-    // console.log(this.nodes)
-    // console.log(this.nodes[node1])
-    // console.log(this.nodes[node2])
-    // this.nodes[node1].filter(el => el !== node2)
-    // this.nodes[node2].filter(el => el !== node1)
-    // console.log(this.nodes[node1])
-    // console.log(this.nodes[node2])
+    this.nodes[node1] = this.nodes[node1].filter((el) => el !== node2);
+    this.nodes[node2] = this.nodes[node2].filter((el) => el !== node1);
   }
 
-  hasEdge(node1, node2) {}
+  hasEdge(node1, node2) {
+    if (
+      this.nodes[node1].includes(node2) &&
+      this.nodes[node2].includes(node1)
+    ) {
+      return true;
+    }
+    return false;
+  }
 }
 
 /*
