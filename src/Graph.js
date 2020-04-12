@@ -9,10 +9,12 @@ class Graph {
   }
 
   addNode(node) {
+    //O(1)
     this.nodes[node] = [];
   }
 
   removeNode(node) {
+    //O(n)
     for (const el in this.nodes) {
       this.removeEdge(node, el);
     }
@@ -20,6 +22,7 @@ class Graph {
   }
 
   contains(node) {
+    //O(1)
     return this.nodes[node] ? true : false;
   }
 
@@ -40,6 +43,7 @@ class Graph {
   }
 
   hasEdge(node1, node2) {
+    //O(N -> N is the # of connections each node has)
     if (
       this.nodes[node1].includes(node2) &&
       this.nodes[node2].includes(node1)

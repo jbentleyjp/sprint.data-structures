@@ -7,16 +7,10 @@ class BinarySearchTree {
 
   // Insert Method
   insert(value) {
+    //O(log n)
     const child = new BinarySearchTree(value);
 
-    // if value > this.value insert to one side, else
-    // if(var < this.value){...}
-    ///this.left = var
-    // else {...}
-    // this.right = var
-
     let innerFunc = (tree) => {
-      //if dup return
       if (value < tree.value) {
         if (!tree.left) {
           tree.left = child;
@@ -38,6 +32,7 @@ class BinarySearchTree {
 
   // Contains Method
   contains(value) {
+    //O(log n)
     let exists = false;
 
     let innerFunc = (tree) => {
@@ -64,6 +59,7 @@ class BinarySearchTree {
 
   // The traverseDepthFirstInOrder Method
   traverseDepthFirstInOrder(callback) {
+    //O(log n)
     const innerFunc = (tree) => {
       if (tree.left) {
         innerFunc(tree.left);
@@ -77,18 +73,6 @@ class BinarySearchTree {
     return undefined;
   }
 }
-
-//   innerFunc(tree.left)
-// } else {
-//   callback(tree)
-// }
-// if(tree.right.children)
-
-// callback(tree.children)
-// if(tree.right){
-//   for (const node of tree.right){
-//     callback(node)
-// }
 
 /*
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

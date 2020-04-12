@@ -12,6 +12,7 @@ class LinkedList {
   }
 
   appendToTail(value) {
+    //O(1)
     const output = new Node(value);
     if (!this.head) {
       this.head = output;
@@ -25,12 +26,14 @@ class LinkedList {
   }
 
   removeHead() {
+    //O(1)
     const removedHead = this.head;
     this.head = this.head.next;
     return removedHead;
   }
 
   findNode(value) {
+    //O(n)
     let currentNode = this.head;
 
     while (currentNode.value !== value) {

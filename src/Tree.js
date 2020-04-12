@@ -5,6 +5,7 @@ class Tree {
   }
 
   addChild(value) {
+    //O(1)
     let child = new Tree(value);
     this.children.push(child);
 
@@ -12,6 +13,7 @@ class Tree {
   }
 
   contains(value) {
+    //O(n)
     let exists = false;
 
     const innerFunc = (testTree) => {
@@ -28,6 +30,7 @@ class Tree {
   }
 
   remove(value) {
+    //O(n)
     //write some tests if you can!
     let removedVal;
 

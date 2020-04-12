@@ -61,6 +61,20 @@ describe("Trees", () => {
       expect(tree.contains(4)).to.equal(true);
       expect(tree.contains(5)).to.equal(true);
     });
+    describe("the remove method", () => {
+      it("should return the removed value", () => {
+        tree.addChild(2);
+        tree.addChild(4);
+        expect(tree.remove(2).value).to.equal(2);
+      });
+      it("the branch should return undefined", () => {
+        tree.addChild(2);
+        tree.addChild(4);
+        tree.children[0].addChild(3);
+        tree.remove(3);
+        expect(tree.children[0][0]).to.equal(undefined);
+      });
+    });
   });
 
   /*
